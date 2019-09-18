@@ -638,6 +638,6 @@ button:focus {
         line-height: 15px;
     }
     .header-name{
-        font-size:38px;
+        font-size: 2rem;
     }
 }
