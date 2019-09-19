@@ -36,6 +36,7 @@
         <meta property="og:title" content="Murakami's Portfolio Site" />
         <meta property="og:description" content="デイトラで作成した初めてのポートフォリオサイトです。" />
         <meta property="og:image" content="https://github.com/shushushun/portfolio-site/blob/master/images/works/3.png?raw=true" />
+        <script src="https://sdk.form.run/js/v2/formrun.js"></script>
     </head>
 
     <body>
@@ -382,30 +383,30 @@
                     <div class="col-lg-12">
                         <div class="form-kerri contact_form">
                             <div id="message"></div>
-                            <form method="post" action="php/contact.php" name="contact-form" id="working_form">
+                            <form class="formrun" action="https://form.run/api/v1/r/vnhlpc59k41367eol1dxgs9g" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
-                                            <input name="name" id="name" type="text" class="form-control" placeholder="お名前" >
+                                            <input name="name" id="name" type="text" class="form-control" placeholder="お名前" data-formrun-required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
-                                            <input name="email" id="email" type="email" class="form-control" placeholder="メールアドレス" >
+                                            <input name="email" id="email" type="email" class="form-control" placeholder="メールアドレス" data-formrun-required>
                                         </div>
                                     </div>                                
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group mt-2">
-                                            <input type="text" class="form-control" id="subject" placeholder="件名" />
+                                            <input type="text" class="form-control" id="subject" placeholder="件名"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group mt-2">
-                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="お問い合わせ内容"></textarea>
+                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="お問い合わせ内容" data-formrun-required></textarea>
                                         </div>
                                     </div>
                                 </div>
