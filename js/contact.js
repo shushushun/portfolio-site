@@ -13,6 +13,7 @@ $('#working_form').submit(function() {
         $.post(action, {
                 name: $('#name').val(),
                 email: $('#email').val(),
+                about: $('#about').val(),
                 comments: $('#comments').val(),
             },
             function(data) {
@@ -31,6 +32,3 @@ $('#working_form').submit(function() {
     return false;
 
 });
-
-
-
