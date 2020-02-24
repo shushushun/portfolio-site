@@ -11,7 +11,7 @@ if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
 $name     = $_POST['name'];
 $email    = $_POST['email'];
-$about    = $_POST['about'];
+$subject    = $_POST['subject'];
 $comments = $_POST['comments'];
 
 if(trim($name) == '') {
