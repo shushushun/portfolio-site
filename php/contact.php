@@ -11,21 +11,22 @@ if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
 $name     = $_POST['name'];
 $email    = $_POST['email'];
+$about    = $_POST['about'];
 $comments = $_POST['comments'];
 
 if(trim($name) == '') {
-	echo '<div class="error_msg">You must enter your name.</div>';
+	echo '<div class="error_msg">お名前を入力してください。</div>';
 	exit();
 } else if(trim($email) == '') {
-	echo '<div class="error_msg">Please enter a valid email address.</div>';
+	echo '<div class="error_msg">メールアドレスを入力してください。</div>';
 	exit();
 } else if(!isEmail($email)) {
-	echo '<div class="error_msg">You have entered an invalid e-mail address. Please try again.</div>';
+	echo '<div class="error_msg">無効なメールアドレスです。</div>';
 	exit();
 }
 
 if(trim($comments) == '') {
-	echo '<div class="error_msg">Please enter your message.</div>';
+	echo '<div class="error_msg">お問い合わせ内容を入力してください。</div>';
 	exit();
 }
 
@@ -39,7 +40,7 @@ if(get_magic_quotes_gpc()) {
 // Example $address = "joe.doe@yourdomain.com";
 
 //$address = "example@example.net";
-$address = "example@example.net";
+$address = "murakami.shushushun@gmail.com";
 
 
 // Configuration option.
@@ -47,16 +48,16 @@ $address = "example@example.net";
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
 
-$e_subject = 'You have been contacted by ' . $name . '.';
+$e_subject = $name . '様からメールが届きました';
 
 
 // Configuration option.
 // You can change this if you feel that you need to.
 // Developers, you may wish to add more fields to the form, in which case you must be sure to add them here.
 
-$e_body = "You have been contacted by $name. Their additional message is as follows." . PHP_EOL . PHP_EOL;
+$e_body = $name. "様からのメールの内容は、次の通りです▼." . PHP_EOL . PHP_EOL;
 $e_content = "\"$comments\"" . PHP_EOL . PHP_EOL;
-$e_reply = "You can contact $name via email, $email";
+$e_reply =  $name . "様のメールアドレス: " . $email;
 
 $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
@@ -72,8 +73,9 @@ if(mail($address, $e_subject, $msg, $headers)) {
 
 	echo "<fieldset>";
 	echo "<div id='success_msg'>";
-	echo "<h3>Email Sent Successfully.</h3>";
-	echo "<p>Thank you <strong>$name</strong>, your message has been submitted to us.</p>";
+	echo "<h3>メールの送信が完了しました。</h3>";
+	echo "<p><strong>$name</strong>様<br>お問い合わせ頂きましてありがとうございます。</p>";
+	echo "<p>24時間以内に返信いたしますので、少々お待ちください。</p>";
 	echo "</div>";
 	echo "</fieldset>";
 
